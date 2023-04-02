@@ -1,0 +1,170 @@
+body {
+  background-image: url("fondo.png");
+  background-size: cover;
+  font-family: "FIFA Welcome";
+}
+
+.logo {
+  border-style: none; /* Remueve el borde predeterminado que aparece alrededor de la imagen */
+  pointer-events: none; /* Desactiva los eventos del puntero del mouse para la imagen, lo que evita que aparezca el botón de enlace */
+  position: absolute;
+  top: 100px;
+  left: 1120px;
+  width: 380px;
+  height: 400px;
+  background-size: contain;
+  z-index: 9999;
+}
+
+
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-gap: 20px;
+  max-width: 800px;
+  margin: 20px auto 0;
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: transparent;
+  padding: 20px; 
+}
+.figurita {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  border: none; /* Agregamos una regla para remover el borde por defecto */
+}
+
+.figurita:hover {
+  transform: scale(1.05);
+  border-radius: 10px;
+}
+
+.figurita:hover::before {
+  opacity: 1.0;
+}
+
+.figurita::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.figurita .info {
+  font-family: 'FIFA Welcome', sans-serif;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.figurita:hover .info {
+  opacity: 1;
+}
+
+.figurita .info h2 {
+  text-transform: uppercase;
+  margin-top: -8px;
+  font-size: 18px;
+  text-shadow: 2px 2px #000;
+  color: white;
+}
+
+.figurita .info p {
+  font-size: 18px;
+  margin: 3px;
+  color: white;
+}
+#numero {
+  font-size: 30px;;
+position: absolute;
+top: -18px;
+left: -34px;
+}
+#pais {
+margin-top: -18px;
+margin-bottom: 20px;
+
+}
+.add-button {
+  font-family: 'FIFA Welcome', sans-serif;
+  background-color: #AB1B3A;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  margin-top: 8px;
+}
+
+.add-button:hover {
+  background-color: #5a0b1c;
+  color:white;
+}
+
+.reset-button {
+  font-family: 'FIFA Welcome', sans-serif;
+  font-size: 25px;
+  position: absolute;
+  top: 80px;
+  left: 108px;
+  background-color: white;
+  color: #AB1B3A;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+.reset-button:hover {
+  background-color: #AB1B3A;
+  color: white;
+}
+
+
+#botones {
+  font-family: 'FIFA Welcome', sans-serif;
+  position: absolute;
+  top: 130px;
+  left: 60px;
+  display: flex;
+  flex-direction: column;
+}
+
+.boton {
+  margin: 2px;
+  border-width: 5px;
+  border-color: #ffffff;
+  font-family: 'FIFA Welcome', sans-serif;
+  font-size: 20px;
+  background-color: #AB1B3A;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+.boton:hover {
+  background-color: white;
+  color: #AB1B3A;
+}
