@@ -1,8 +1,6 @@
-import Sequelize from 'sequelize'
+import Sequelize from "sequelize";
 
-export const sequelize = new Sequelize ('figuritas', 'postgres', 'venus',{
-    host: 'localhost',
-    dialect: 'postgres'
-
-
-})
+export const sequelize = new Sequelize("figuritas", "", "", {
+  host: "localhost",
+  dialect: "mysql",
+});
