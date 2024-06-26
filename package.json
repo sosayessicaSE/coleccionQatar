@@ -2,16 +2,18 @@
   "name": "figuritasproyecto",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/src/index.js",
+  "main": "backend/src/app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "nodemon src/index.js"
+    "dev": "nodemon src/app.js",
+    "start": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@supabase/supabase-js": "^2.43.5",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "morgan": "^1.10.0",

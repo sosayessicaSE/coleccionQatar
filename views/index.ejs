@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <title>Figuritas</title>
-    <link rel="shortcut icon" href="trofeo.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css" />
+<head>
+  <title>Figuritas</title>
+  <link rel="shortcut icon" href="trofeo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <% console.log(figuritas); %>
 
-  </head>
-  <body>
-    
-    <div class="container">
-      <% for (let i = 0; i < figuritas.length; i++) { %>
-        <div class="figurita" style="background-image: url('<%= figuritas[i].imagen %>')">
-          >
-          <div class="info">
-            <h2 id="nombre"><%= figuritas[i].nombre %></h2>
-            <p id="pais"> <%= figuritas[i].pais %></p>
-            <p id="tengo"><%= figuritas[i].tengo ? 'Cantidad: ' : 'Faltante' %></p>
-            <p class="cantidad"> <%= figuritas[i].tengo ? figuritas[i].cantidad : '' %> <span id="cantidad-<%= figuritas[i].id %>" style="display: none;"><%= figuritas[i].cantidad %></span></p>
-            <form>
+  <div class="container">
+    <% for (let i = 0; i < figuritas.length; i++) { %>
+      <div class="figurita" style="background-image: url('<%= figuritas[i].imagen %>')">
+        >
+        <div class="info">
+          <h2 id="nombre"><%= figuritas[i].nombre %></h2>
+          <p id="pais"> <%= figuritas[i].pais %></p>
+          <span id="tengo-<%= figuritas[i].id %>" style="display: none;"></span>
+          <p id="tengo"><%= figuritas[i].tengo ? 'Cantidad: ' : 'Faltante' %></p>
+          <p class="cantidad"> <%= figuritas[i].tengo ? figuritas[i].cantidad : '' %> <span id="cantidad-<%= figuritas[i].id %>" style="display: none;"><%= figuritas[i].cantidad %></span></p>
+          <form>
             <button type="button" class="add-button" data-id="<%= figuritas[i].id %>">+1</button>
-              <input type="hidden" name="_method" value="PUT">
-            </form>
-                             
-          </div> 
-        </div>        
-      <% } %>
-    </div>
-    <!-- Agregar un botón de reinicio -->
-    <button class="reset-button" id="reset-button">REINICIAR</button>
+            <input type="hidden" name="_method" value="PUT">
+          </form>                   
+        </div> 
+      </div>        
+    <% } %>
+  </div>
+
+  <!-- Agregar un botón de reinicio -->
+  <button class="reset-button" id="reset-button">REINICIAR</button>
+  
+  <!-- Elemento para mostrar el mensaje de éxito -->
+  <div id="success-message" style="display: none;">
+    ¡Reseteo exitoso!
+  </div>
+  
+  <div class="content-container">
   <ul id="botones">
     <button class="boton" id="todas-button">Todas</button>
     <button class="boton" id="posesion-button">En posesión</button>
     <button class="boton" id="repetidas-button">Repetidas</button>
     <button class="boton" id="faltantes-button">Faltantes</button>
-</ul>
-<div class="logo-container">
-  <img src="logofi.png" alt="Logo" class="logo2">
-  <div class="popup">
-    Yessica Sosa <br>
-    Full-stack Developer <br>
-    <div class="social-icons">
-      <a href="https://www.linkedin.com/in/-yessicasosa-" target="_blank">
-        <img src="linkedin.png" alt="LinkedIn" class="social-icon">
-      </a>
-      <a href="https://github.com/sdvenus" target="_blank">
-        <img src="github.png" alt="GitHub" class="social-icon">
-      </a>
+  </ul>
+  </div>
+  <div class="logo-container">
+    <img src="logofi.png" alt="Logo" class="logo2">
+    <div class="popup">
+      Yessica Sosa <br>
+      Full-stack Developer <br>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/-yessicasosa-" target="_blank">
+          <img src="linkedin.png" alt="LinkedIn" class="social-icon">
+        </a>
+        <a href="https://github.com/sdvenus" target="_blank">
+          <img src="github.png" alt="GitHub" class="social-icon">
+        </a>
+      </div>
     </div>
   </div>
-</div>
 
-    <img src="logo.png" alt="Logo" class="logo" width="400" height="400" style="margin-top: 400px; margin-left: 250px;">
-    <script src="principal.js"></script>
-  </body>
+  <img src="logo.png" alt="Logo" class="logo" width="400" height="400" style="margin-top: 400px; margin-left: 250px;">
+  <script src="principal.js"></script>
+
+</body>
 </html>

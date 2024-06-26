@@ -1,4 +1,4 @@
-import express from 'express';
+import express from "express";
 import {
   getFiguritas,
   getFigurita,
@@ -6,26 +6,26 @@ import {
   deleteFiguritas,
   resetearFiguritas,
   updateFiguritaCantidad,
-} from '../controllers/figuritas.controller.js';
+} from "../controllers/figuritas.controller.js";
 
 const router = express.Router();
 
 // GET /figuritas - obtener todas las figuritas
-router.get('/figuritas', getFiguritas);
+router.get("/", getFiguritas);
 
 // GET /figuritas/:id - obtener una figurita por su ID
-router.get('/figuritas/:id', getFigurita);
+router.get("/:id", getFigurita);
 
 // POST /figuritas - crear una nueva figurita
-router.post('/figuritas', createFiguritas);
+router.post("/", createFiguritas);
 
 // PUT /figuritas/:id/cantidad - actualizar la cantidad de una figurita por su ID
-router.put('/figuritas/:id/cantidad', updateFiguritaCantidad);
+router.put("/:id/cantidad", updateFiguritaCantidad);
 
 // DELETE /figuritas/:id - eliminar una figurita por su ID
-router.delete('/figuritas/:id', deleteFiguritas);
+router.delete("/:id", deleteFiguritas);
 
 // PUT /figuritas - resetear las figuritas
-router.put('/figuritas', resetearFiguritas);
+router.post("/reset", resetearFiguritas);
 
 export default router;
