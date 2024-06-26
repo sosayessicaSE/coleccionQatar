@@ -47,9 +47,10 @@ app.get("*", (req, res) => {
   res.status(404).send("404 Not Found");
 });
 
-// Iniciar el servidor en el puerto 3000
-app.listen(3000, () => {
-  console.log("Server is running on port 3000");
+const port = process.env.PORT || 3000; // Utiliza el puerto proporcionado por el entorno o el 3000 si no está definido
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
 export default app;
